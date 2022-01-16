@@ -1,7 +1,5 @@
 
 
-/* You can add global styles to this file, and also import other style files */
-/* Made with love by Mutiullah Samim*/
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
@@ -83,4 +81,8 @@ color: white;
 
 .links a{
 margin-left: 4px;
+}
+
+.errors{
+    color:brown
 }

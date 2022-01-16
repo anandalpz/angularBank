@@ -1,0 +1,11 @@
+table{
+    color: aliceblue;
+    border-collapse: collapse;
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+h1{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
