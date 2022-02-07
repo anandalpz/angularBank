@@ -15,6 +15,10 @@ font-family: 'Numans', sans-serif;
 height: 100%;
 align-content: center;
 } */
+.s1{
+    background-color: gray;
+    opacity: 0.09;
+}
 
 .card{
 height: 280px;

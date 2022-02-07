@@ -1,0 +1,8 @@
+.d1{
+    border: double;
+    border-color: white;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}

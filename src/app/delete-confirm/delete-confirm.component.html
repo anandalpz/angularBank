@@ -1,0 +1,6 @@
+<!-- this html page will be visible,only when {item} has a value -->
+<div *ngIf="item" class="d1"> 
+    <p style="color: white;">Are You Sure!! Do You Want To Delete This Account {{item}}??</p>
+    <button class="btn btn-danger" (click)="deleteFromChild()">Delete</button>
+    <button class="btn btn-primary" (click)="cancelFromChild()">Cancel</button>
+</div>

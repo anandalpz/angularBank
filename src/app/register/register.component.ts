@@ -28,14 +28,18 @@ export class RegisterComponent implements OnInit {
       var uname=this.registerForm.value.uname
       var acno=this.registerForm.value.acno
       var pswd=this.registerForm.value.pswd
-      let result=this.ds.register(uname,acno,pswd) //control goes to dataservice.ts 
-      if(result){
-        alert("registered successfully")
-        this.rout.navigateByUrl("")
-      }
-      else{
-        alert("Account Number Already Exist")
-      }
+      //asynchronous
+      this.ds.register(uname,acno,pswd) //control goes to dataservice.ts 
+      .subscribe((result:any)=>{
+        if(result){
+          alert(result.message)
+          this.rout.navigateByUrl("")
+        }
+      },
+      (result)=>{
+        alert(result.error.message)
+      })
+     
     }
     else{
       alert("Invalid Form")

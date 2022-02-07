@@ -34,17 +34,23 @@ export class LoginComponent implements OnInit {
   //   console.log(this.pswd)
   // }
   login(){
-
+    var acno=this.loginForm.value.acno
+    var password=this.loginForm.value.pswd
     if (this.loginForm.valid) {
-      var accnum=this.loginForm.value.acno
-      var passwd=this.loginForm.value.pswd
-      let result=this.ds.login(accnum,passwd)  //control goes to dataservice.ts
-  
-      if(result){
-        this.router1.navigateByUrl('dashboard')
-          alert("login success")
-         
-      }
+      //asynchronous
+      this.ds.login(acno,password) //control goes to dataservice.ts 
+      .subscribe((result:any)=>{
+        if(result){
+          alert(result.message)
+          localStorage.setItem("currrentUser",JSON.stringify(result.currrentUser))
+          localStorage.setItem("currentAcno",JSON.stringify(result.currentAcno))
+          localStorage.setItem("token",JSON.stringify(result.token))
+          this.router1.navigateByUrl("dashboard")
+        }
+      },
+      (result)=>{
+        alert(result.error.message)
+      })
     }
     else{
       alert("Invalid Form")
